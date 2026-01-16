@@ -1,5 +1,5 @@
 module.exports = {
-  email: 'chandrikadeb7@gmail.com',
+  email: 'chensizhesh@outlook.com',
 
   socialMedia: [
     {
@@ -7,20 +7,8 @@ module.exports = {
       url: 'https://github.com/chandrikadeb7',
     },
     {
-      name: 'Instagram',
-      url: 'https://www.instagram.com/chandrikadeb7',
-    },
-    {
-      name: 'Twitter',
-      url: 'https://twitter.com/chandrikadeb7',
-    },
-    {
       name: 'Linkedin',
-      url: 'https://www.linkedin.com/in/chandrika-deb',
-    },
-    {
-      name: 'Codepen',
-      url: 'https://codepen.io/chandrikadeb7',
+      url: 'https://www.linkedin.com/in/sizhe-c',
     },
   ],
 
@@ -30,11 +18,11 @@ module.exports = {
       url: '/#about',
     },
     {
-      name: 'Experience',
-      url: '/#jobs',
+      name: 'Background',
+      url: '/#background',
     },
     {
-      name: 'Work',
+      name: 'Outputs',
       url: '/#projects',
     },
     {

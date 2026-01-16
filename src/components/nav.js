@@ -8,6 +8,8 @@ import { loaderDelay } from '@utils';
 import { useScrollDirection, usePrefersReducedMotion } from '@hooks';
 import { Menu } from '@components';
 import { IconLogo, IconHex } from '@components/icons';
+import { StaticImage } from 'gatsby-plugin-image';
+
 
 const StyledHeader = styled.header`
   ${({ theme }) => theme.mixins.flexBetween};
@@ -17,7 +19,8 @@ const StyledHeader = styled.header`
   padding: 0px 50px;
   width: 100%;
   height: var(--nav-height);
-  background-color: rgba(10, 25, 47, 0.85);
+  // background-color: rgba(10, 25, 47, 0.85);
+  background-color: rgba(246, 248, 251, 0.85);
   filter: none !important;
   pointer-events: auto !important;
   user-select: auto !important;
@@ -38,7 +41,8 @@ const StyledHeader = styled.header`
       css`
         height: var(--nav-scroll-height);
         transform: translateY(0px);
-        background-color: rgba(10, 25, 47, 0.85);
+        // background-color: rgba(10, 25, 47, 0.85);
+          background-color: rgba(246, 248, 251, 0.85);
         box-shadow: 0 10px 30px -10px var(--navy-shadow);
       `};
 
@@ -67,8 +71,10 @@ const StyledNav = styled.nav`
 
     a {
       color: var(--green);
-      width: 42px;
-      height: 42px;
+      width: 55px;
+      height: 55px;
+      display: inline-flex;
+      align-items: center;
       position: relative;
       z-index: 1;
 
@@ -147,6 +153,8 @@ const StyledLinks = styled.div`
     ${({ theme }) => theme.mixins.smallButton};
     margin-left: 15px;
     font-size: var(--fz-xs);
+    border-radius: 999px;
+    cursor: url('/coin30.png') 16 16, pointer;
   }
 `;
 
@@ -181,33 +189,39 @@ const Nav = ({ isHome }) => {
   const fadeClass = isHome ? 'fade' : '';
   const fadeDownClass = isHome ? 'fadedown' : '';
 
+  // const Logo = (
+  //   <div className="logo" tabIndex="-1">
+  //     <Link to="/" aria-label="home">
+  //       <StaticImage
+  //         src="../images/coin.PNG"
+  //         alt="Home"
+  //         width={55}
+  //         layout="fixed"
+  //         placeholder="none"
+  //       />
+  //     </Link>
+  //   </div>
+  // );
   const Logo = (
-    <div className="logo" tabIndex="-1">
-      {isHome ? (
-        <a href="/" aria-label="home">
-          <div className="hex-container">
-            <IconHex />
-          </div>
-          <div className="logo-container">
-            <IconLogo />
-          </div>
-        </a>
-      ) : (
-        <Link to="/" aria-label="home">
-          <div className="hex-container">
-            <IconHex />
-          </div>
-          <div className="logo-container">
-            <IconLogo />
-          </div>
-        </Link>
-      )}
-    </div>
-  );
+  <div className="logo" tabIndex="-1">
+    <a href="/" aria-label="home">
+      <StaticImage
+        src="../images/coin.PNG"
+        alt="Home"
+        width={55}
+        layout="fixed"
+        placeholder="none"
+      />
+    </a>
+  </div>
+);
+
+
+
 
   const ResumeLink = (
-    <a className="resume-button" href="/resume.pdf" target="_blank" rel="noopener noreferrer">
-      Resume
+    <a className="resume-button" href="/myresume.pdf" target="_blank" rel="noopener noreferrer">
+      Resume!
     </a>
   );
 

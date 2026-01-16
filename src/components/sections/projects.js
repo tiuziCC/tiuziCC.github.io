@@ -43,6 +43,17 @@ const StyledProjectsSection = styled.section`
   }
 `;
 
+const StyledBigButton = styled.button`
+  ${({ theme }) => theme.mixins.bigButton};
+  margin-top: 80px;
+  border-radius: 999px;
+  width: max-content;
+  background: transparent;
+
+  cursor: url('/coin30.png') 16 16, pointer;
+`;
+
+
 const StyledProject = styled.li`
   position: relative;
   cursor: default;
@@ -206,7 +217,7 @@ const Projects = () => {
     revealProjects.current.forEach((ref, i) => sr.reveal(ref, srConfig(i * 100)));
   }, []);
 
-  const GRID_LIMIT = 6;
+  const GRID_LIMIT = 2;
   const projects = data.projects.edges.filter(({ node }) => node);
   const firstSix = projects.slice(0, GRID_LIMIT);
   const projectsToShow = showMore ? projects : firstSix;
@@ -241,11 +252,12 @@ const Projects = () => {
             </div>
           </div>
 
-          <h3 className="project-title">
+          {/* <h3 className="project-title">
             <a href={external} target="_blank" rel="noreferrer">
               {title}
             </a>
-          </h3>
+          </h3> */}
+          <h3 className="project-title">{title}</h3>
 
           <div className="project-description" dangerouslySetInnerHTML={{ __html: html }} />
         </header>
@@ -265,10 +277,10 @@ const Projects = () => {
 
   return (
     <StyledProjectsSection>
-      <h2 ref={revealTitle}>Projects | Case Comps | Certifications</h2>
+      <h2 ref={revealTitle}>Projects | Applied Systems</h2>
 
       <Link className="inline-link archive-link" to="/archive" ref={revealArchiveLink}>
-        View Archive
+        View Full Index
       </Link>
 
       <ul className="projects-grid">
@@ -302,9 +314,14 @@ const Projects = () => {
         )}
       </ul>
 
-      <button className="more-button" onClick={() => setShowMore(!showMore)}>
-        Show {showMore ? 'Less' : 'More'}
-      </button>
+      {/* <button className="more-button" onClick={() => setShowMore(!showMore)}>
+        View {showMore ? 'Less' : 'More'}
+      </button> */}
+      {projects.length > GRID_LIMIT && (
+      <StyledBigButton onClick={() => setShowMore(!showMore)}>
+        {showMore ? 'View Less' : 'View More'}
+      </StyledBigButton>
+    )}
     </StyledProjectsSection>
   );
 };

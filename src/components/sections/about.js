@@ -72,17 +72,17 @@ const StyledPic = styled.div`
         transform: translate(8px, 8px);
       }
 
-      .img {
-        filter: none;
-        mix-blend-mode: normal;
-      }
+      // .img {
+      //   filter: none;
+      //   mix-blend-mode: normal;
+      // }
     }
 
     .img {
       position: relative;
       border-radius: var(--border-radius);
-      mix-blend-mode: multiply;
-      filter: grayscale(100%) contrast(1);
+      // mix-blend-mode: multiply;
+      // filter: grayscale(100%) contrast(1);
       transition: var(--transition);
     }
 
@@ -97,12 +97,12 @@ const StyledPic = styled.div`
       transition: var(--transition);
     }
 
-    &:before {
-      top: 0;
-      left: 0;
-      background-color: var(--navy);
-      mix-blend-mode: screen;
-    }
+    // &:before {
+    //   top: 0;
+    //   left: 0;
+    //   background-color: var(--navy);
+    //   mix-blend-mode: screen;
+    // }
 
     &:after {
       border: 2px solid var(--green);
@@ -125,7 +125,7 @@ const About = () => {
     sr.reveal(revealContainer.current, srConfig());
   }, []);
 
-  const skills = ['SEO', 'Content Marketing', 'Conversion Rate Optimization', 'Meta Ads', 'Zoho CRM', 'Tableau', 'HTML/CSS', 'Python'];
+  const skills = ['Data Analysis', 'NLP & Multimodal Learning', 'Figma', 'Python'];
 
   return (
     <StyledAboutSection id="about" ref={revealContainer}>
@@ -135,32 +135,28 @@ const About = () => {
         <StyledText>
           <div>
             <p>
-            With a core specialization in Marketing &amp; Strategy, I've orchestrated impactful
-             digital marketing campaigns for {' '}
-             <a href="https://digeca.tatasteel.com">DigECA</a> {' '}, an e-Commerce steel buying website for MSMEs at{' '} 
-             <a href="https://www.tatasteel.com">Tata Steel</a>.
+              My research journey began with engineering systems and data, particularly in{' '}
+              <strong>vehicle safety & traffic contexts</strong>. Working with real-world crash data,
+              sensory signals, and autonomous perception models showed me that technical performance alone
+              is never the full story.
             </p>
 
             <p>
-            I have also spearheaded employer branding initiatives for {' '}
-            <a href="https://drive.google.com/file/d/1w-uN9jb86pxFXPYMDu_78P-d1CZJAx3V/view?usp=sharing">
-              Aditya Birla Fashion and Retail</a>, {' '} resulting in a remarkable 37% surge in consumer engagement 
-              during my remote live project as part of my MBA journey.
+              I became increasingly interested in the <strong>human element</strong>: “How people move, react and
+              adapt within engineered systems? Or behave unpredictably?” The curiosity led me to explore{' '}
+              <strong>human-centered perspectives</strong> in research. 
             </p>
-
+            
             <p>
-            During my tenure at {' '} <a href="https://www.amdocs.com">Amdocs</a>, {' '} 
-            where I served as a Software Developer, I had the honor of being selected as one of 16 elite {' '} 
-            <a href="https://drive.google.com/file/d/16BGu5InZZDGCtoWas560ezwKsgVBKbI9/view?usp=sharing">Innovation Agents</a>.
+              Alongside this, my experience in{' '}
+              human-computer interaction (HCI) and visual analytics, including
+              game storytelling, has shaped my interest in{' '} <strong>intepretation</strong>, 
+              <strong> sensemaking</strong> and <strong>human–AI collaboration</strong>.
+              I'm excited to continue developing systems that are effective, understandable, and inclusive.
             </p>
 
-            <p>
-            Moreover, my role as a {' '} <a href="https://drive.google.com/file/d/1iRTZfE7v5Y99BYZVxevaGBVtF90t-TOb/view?usp=sharing">
-              Placement Coordinator</a> {' '} at IIM Rohtak saw me cultivate over 30 new corporate relationships, culminating in a 
-              remarkable 42% boost in campus placements.
-            </p>
+            <p>Selected skills here:</p>
 
-            <p>My skills are not limited to this list!</p>
           </div>
 
           <ul className="skills-list">
@@ -172,7 +168,7 @@ const About = () => {
           <div className="wrapper">
             <StaticImage
               className="img"
-              src="../../images/me.jpg"
+              src="../../images/3.jpg"
               width={500}
               quality={95}
               formats={['AUTO', 'WEBP', 'AVIF']}

@@ -174,6 +174,13 @@ const GlobalStyle = createGlobalStyle`
     font-size: clamp(40px, 8vw, 80px);
   }
 
+  .large-heading {
+    margin: 0;
+    font-size: clamp(32px, 6vw, 64px);
+    font-weight: 600;
+    line-height: 1.1;
+  } 
+
   .medium-heading {
     margin: 0;
     font-size: clamp(40px, 8vw, 50px);

@@ -149,9 +149,14 @@ const StyledSidebar = styled.aside`
 
   .resume-link {
     ${({ theme }) => theme.mixins.bigButton};
-    padding: 18px 50px;
-    margin: 10% auto 0;
+    // padding: 18px 50px;
+    // margin: 10% auto 0;
+    // width: max-content;
+    margin-top: 30px;
+    border-radius: 999px;
     width: max-content;
+
+    cursor: url('/coin30.png') 16 16, pointer;
   }
 `;
 
@@ -267,7 +272,7 @@ const Menu = () => {
             )}
 
             <a href="/resume.pdf" className="resume-link">
-              Resume
+              Resume!
             </a>
           </nav>
         </StyledSidebar>

@@ -96,6 +96,8 @@ const StyledProject = styled.li`
     grid-column: 1 / 7;
     grid-row: 1 / -1;
 
+    align-self: start;
+
     @media (max-width: 1080px) {
       grid-column: 1 / 9;
     }
@@ -121,6 +123,12 @@ const StyledProject = styled.li`
     font-family: var(--font-mono);
     font-size: var(--fz-xs);
     font-weight: 400;
+
+    min-height: 18px;
+    line-height: 1.2;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
   }
 
   .project-title {
@@ -158,7 +166,7 @@ const StyledProject = styled.li`
     padding: 25px;
     border-radius: var(--border-radius);
     background-color: var(--light-navy);
-    color: var(--light-slate);
+    color: var(--green);
     font-size: var(--fz-lg);
 
     @media (max-width: 768px) {
@@ -184,6 +192,7 @@ const StyledProject = styled.li`
   .project-tech-list {
     display: flex;
     flex-wrap: wrap;
+    gap: 1px 9px;
     position: relative;
     z-index: 2;
     margin: 25px 0 10px;
@@ -234,10 +243,10 @@ const StyledProject = styled.li`
       }
     }
 
-    .cta {
-      ${({ theme }) => theme.mixins.smallButton};
-      margin: 10px;
-    }
+    // .cta {
+    //   ${({ theme }) => theme.mixins.smallButton};
+    //   margin: 10px;
+    // }
   }
 
   .project-image {
@@ -248,9 +257,12 @@ const StyledProject = styled.li`
     z-index: 1;
 
     @media (max-width: 768px) {
+      position: absolute;
+      inset: 0;
+      z-index: 0;
       grid-column: 1 / -1;
-      height: 100%;
-      opacity: 0.25;
+      // height: 100%;
+      opacity: 0.2;
     }
 
     a {
@@ -273,31 +285,46 @@ const StyledProject = styled.li`
       }
 
       &:before {
+        // content: '';
+        // position: absolute;
+        // width: 100%;
+        // height: 100%;
+        // top: 0;
+        // left: 0;
+        // right: 0;
+        // bottom: 0;
+        // z-index: 3;
+        // transition: var(--transition);
+        // background-color: var(--navy);
+        // mix-blend-mode: screen;
         content: '';
         position: absolute;
-        width: 100%;
-        height: 100%;
-        top: 0;
-        left: 0;
-        right: 0;
-        bottom: 0;
+        inset: 0;
         z-index: 3;
+        background: rgba(255, 255, 255, 0.35);
         transition: var(--transition);
-        background-color: var(--navy);
-        mix-blend-mode: screen;
       }
     }
 
     .img {
       border-radius: var(--border-radius);
-      mix-blend-mode: multiply;
-      filter: grayscale(100%) contrast(1) brightness(90%);
+      // mix-blend-mode: multiply;
+      // filter: grayscale(100%) contrast(1) brightness(90%);
+      filter: grayscale(40%) contrast(0.9) brightness(1.05);
+      opacity: 0.85;
+      transition: var(--transition);
 
       @media (max-width: 768px) {
-        object-fit: cover;
-        width: auto;
+        // object-fit: cover;
+        // width: auto;
+        // height: 100%;
+        // filter: grayscale(100%) contrast(1) brightness(50%);
+        width: 100%;
         height: 100%;
-        filter: grayscale(100%) contrast(1) brightness(50%);
+        object-fit: cover;
+        object-position: center;
+        filter: grayscale(100%) blur(1px) brightness(1.1);
+        opacity: 0.8;
       }
     }
   }
@@ -313,6 +340,7 @@ const Featured = () => {
         edges {
           node {
             frontmatter {
+              overline
               title
               cover {
                 childImageSharp {
@@ -322,7 +350,6 @@ const Featured = () => {
               tech
               github
               external
-              cta
             }
             html
           }
@@ -347,22 +374,28 @@ const Featured = () => {
 
   return (
     <section id="projects">
-      <h2 className="numbered-heading" ref={revealTitle}>
-        Some of my Ideas
+      <div style={{ marginBottom: '10px' }}>
+        <h2 className="numbered-heading" ref={revealTitle}>
+        Selected Outputs
       </h2>
+      </div>
+      
 
       <StyledProjectsGrid>
         {featuredProjects &&
           featuredProjects.map(({ node }, i) => {
             const { frontmatter, html } = node;
-            const { external, title, tech, github, cover, cta } = frontmatter;
+            const { external, title, tech, github, cover} = frontmatter;
             const image = getImage(cover);
 
             return (
               <StyledProject key={i} ref={el => (revealProjects.current[i] = el)}>
                 <div className="project-content">
                   <div>
-                    <p className="project-overline">Featured Project</p>
+                    {/* <p className="project-overline">Featured Project</p> */}
+                    <p className="project-overline">
+                      {frontmatter.overline || 'Featured Project'}
+                    </p>
 
                     <h3 className="project-title">
                       <a href={external}>{title}</a>
@@ -382,17 +415,17 @@ const Featured = () => {
                     )}
 
                     <div className="project-links">
-                      {cta && (
+                      {/* {cta && (
                         <a href={cta} aria-label="Course Link" className="cta">
                           View More
                         </a>
-                      )}
+                      )} */}
                       {github && (
                         <a href={github} aria-label="GitHub Link">
                           <Icon name="GitHub" />
                         </a>
                       )}
-                      {external && !cta && (
+                      {external && (
                         <a href={external} aria-label="External Link" className="external">
                           <Icon name="External" />
                         </a>
