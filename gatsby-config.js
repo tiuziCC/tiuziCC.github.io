@@ -2,13 +2,12 @@ const config = require('./src/config');
 
 module.exports = {
   siteMetadata: {
-    // title: 'Sizhe Chen',
-    title: "Sizhe Chen - Website",
+    title: 'Sizhe Chen',
     description:
-      'Chandrika Deb is an IIM alumnus who spearheads marketing initiatives at Tata Steel and is also a freelance tech blogger.',
-    siteUrl: 'https://chandrikadeb7.github.io', // No trailing slash allowed!
-    image: '/og.png', // Path to your image you placed in the 'static' folder
-    twitterUsername: '@chandrikadeb7',
+      'Personal website of Sizhe Chen. Research interests in human-centred perception, traffic and autonomous systems.',
+    siteUrl: 'https://tiuziCC.github.io',
+    image: '/og.png',
+    twitterUsername: '',
   },
   plugins: [
     `gatsby-plugin-react-helmet`,
@@ -30,7 +29,7 @@ module.exports = {
         icon: 'src/images/coin.PNG',
       },
     },
-    `gatsby-plugin-offline`,
+    // `gatsby-plugin-offline`,
     {
       resolve: `gatsby-source-filesystem`,
       options: {
