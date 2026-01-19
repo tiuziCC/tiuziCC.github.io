@@ -1,11 +1,11 @@
 <div align="center">
-  <img alt="Logo" src=" https://github.com/tiuziCC/tiuziCC.github.io/blob/code/src/images/car.jpg" width="100" />
+  <img alt="Logo" src="https://github.com/tiuziCC/tiuziCC.github.io/blob/code/src/images/car.jpg" width="100" />
 </div>
 <h1 align="center">
   Personal Website
 </h1>
 <p align="center">
-  The 2nd iteration of <a href="https://tiuzicc.github.io/" target="_blank">tiuzicc.github.io</a> built with <a href="https://www.gatsbyjs.org/" target="_blank">Gatsby</a> and hosted using <a href="https://pages.github.com/" target="_blank">Github Pages</a>
+  My website: <a href="https://tiuzicc.github.io/" target="_blank">tiuzicc.github.io</a> built with <a href="https://www.gatsbyjs.org/" target="_blank">Gatsby</a> and hosted using <a href="https://pages.github.com/" target="_blank">Github Pages</a>
 </p>
 
 <div align="center">
