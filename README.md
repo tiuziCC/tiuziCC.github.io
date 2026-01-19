@@ -1,5 +1,5 @@
-<!-- <div align="center">
-  <img alt="Logo" src=" https://github.com/tiuziCC/tiuziCC.github.io/tree/code/src/images/car.jpg" width="100" />
+<div align="center">
+  <img alt="Logo" src=" https://github.com/tiuziCC/tiuziCC.github.io/blob/code/src/images/car.jpg" width="100" />
 </div>
 <h1 align="center">
   Personal Website
@@ -9,7 +9,7 @@
 </p>
 
 <div align="center">
-  <img alt="Demo" src="https://github.com/chandrikadeb7/chandrikadeb7.github.io/blob/code/src/images/demo.jpg" />
+  <img alt="Demo" src="https://github.com/tiuziCC/tiuziCC.github.io/blob/code/src/images/demo.jpg" />
 </div>
 
 ### ⭐️⭐️ Fork Requirement!!!
