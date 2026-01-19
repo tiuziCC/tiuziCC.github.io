@@ -4,9 +4,9 @@ module.exports = {
   siteMetadata: {
     title: 'Sizhe Chen',
     description:
-      'Personal website of Sizhe Chen. Research interests in human-centred perception, traffic and autonomous systems.',
+      'Personal website of Sizhe Chen. Research interests in human-centered perception, traffic & autonomous systems; Emphasising interactive & data-driven design.',
     siteUrl: 'https://tiuziCC.github.io',
-    image: '/og.png',
+    image: '/og.jpg',
     twitterUsername: '',
   },
   plugins: [
