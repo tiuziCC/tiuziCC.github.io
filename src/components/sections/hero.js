@@ -3,6 +3,7 @@ import { CSSTransition, TransitionGroup } from 'react-transition-group';
 import styled from 'styled-components';
 import { navDelay, loaderDelay } from '@utils';
 import { usePrefersReducedMotion } from '@hooks';
+import { email } from '@config';
 
 const StyledHeroSection = styled.section`
   ${({ theme }) => theme.mixins.flexCenter};
@@ -193,17 +194,24 @@ const Hero = () => {
   //     View CV!
   //   </a>
   // );
+//   const five = (
+//   <a
+//     className="email-link"
+//     href="/myresume.pdf"
+//     target="_blank"
+//     rel="noopener noreferrer"
+//   >
+//     View CV!
+//   </a>
+// );
   const five = (
-  <a
-    className="email-link"
-    href="/myresume.pdf"
-    target="_blank"
-    rel="noopener noreferrer"
+    <a
+      className="email-link"
+      href={`mailto:${email}?subject=Inquiry%20from%20your%20website&body=Hi%20Sizhe,%0D%0A%0D%0AI%20came%20across%20your%20website%20and%20would%20love%20to%20learn%20more%20about%20your%20work.%0D%0AI%E2%80%99d%20like%20to%20have%20your%20detailed%20CV.%0D%0A%0D%0ABest%20regards,`}
   >
-    View CV!
-  </a>
-);
-
+      View CV!
+    </a>
+  );
 
   const items = [one, two, three, four, five];
 

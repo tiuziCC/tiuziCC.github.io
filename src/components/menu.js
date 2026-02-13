@@ -2,7 +2,7 @@ import React, { useState, useEffect, useRef } from 'react';
 import { Helmet } from 'react-helmet';
 import { Link } from 'gatsby';
 import styled from 'styled-components';
-import { navLinks } from '@config';
+import { navLinks, email } from '@config';
 import { KEY_CODES } from '@utils';
 import { useOnClickOutside } from '@hooks';
 
@@ -271,9 +271,15 @@ const Menu = () => {
               </ol>
             )}
 
-            <a href="/myresume.pdf" className="resume-link">
+            {/* <a href="/myresume.pdf" className="resume-link">
               Resume!
-            </a>
+            </a> */}
+            <a
+            href={`mailto:${email}?subject=Inquiry%20from%20your%20website&body=Hi%20Sizhe,%0D%0A%0D%0AI%20came%20across%20your%20website%20and%20would%20love%20to%20learn%20more%20about%20your%20work.%0D%0AI'd%20like%20to%20have%20your%20detailed%20CV.%0D%0A%0D%0ABest%20regards,`}
+            className="resume-link"
+          >
+            Resume!
+          </a>
           </nav>
         </StyledSidebar>
       </div>

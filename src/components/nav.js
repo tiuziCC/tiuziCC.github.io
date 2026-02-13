@@ -3,7 +3,7 @@ import { Link } from 'gatsby';
 import PropTypes from 'prop-types';
 import { CSSTransition, TransitionGroup } from 'react-transition-group';
 import styled, { css } from 'styled-components';
-import { navLinks } from '@config';
+import { navLinks, email } from '@config';
 import { loaderDelay } from '@utils';
 import { useScrollDirection, usePrefersReducedMotion } from '@hooks';
 import { Menu } from '@components';
@@ -219,11 +219,20 @@ const Nav = ({ isHome }) => {
 
 
 
+  // const ResumeLink = (
+  //   <a className="resume-button" href="/myresume.pdf" target="_blank" rel="noopener noreferrer">
+  //     Resume!
+  //   </a>
+  // );
   const ResumeLink = (
-    <a className="resume-button" href="/myresume.pdf" target="_blank" rel="noopener noreferrer">
-      Resume!
-    </a>
-  );
+  <a
+    className="resume-button"
+    href={`mailto:${email}?subject=Inquiry%20from%20your%20website&body=Hi%20Sizhe,%0D%0A%0D%0AI%20came%20across%20your%20website%20and%20would%20love%20to%20learn%20more%20about%20your%20work.%0D%0AI'd%20like%20to%20have%20your%20detailed%20CV.%0D%0A%0D%0ABest%20regards,`}
+  >
+    Resume!
+  </a>
+);
+
 
   return (
     <StyledHeader scrollDirection={scrollDirection} scrolledToTop={scrolledToTop}>
