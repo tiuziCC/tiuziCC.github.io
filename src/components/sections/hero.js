@@ -185,15 +185,6 @@ const Hero = () => {
       </p>
     </>
   );
-  // const five = (
-  //   <a
-  //     className="email-link"
-  //     href=""
-  //     target="_blank"
-  //     rel="noreferrer">
-  //     View CV!
-  //   </a>
-  // );
 //   const five = (
 //   <a
 //     className="email-link"
@@ -204,11 +195,20 @@ const Hero = () => {
 //     View CV!
 //   </a>
 // );
+  const subject = "Inquiry from your website";
+
+  const body = `Hi Sizhe,
+
+   I came across your website and found it interesting.
+   I'd love to have your detailed CV. Cheers!
+
+Best regards,`;
+
   const five = (
     <a
       className="email-link"
-      href={`mailto:${email}?subject=Inquiry%20from%20your%20website&body=Hi%20Sizhe,%0D%0A%0D%0AI%20came%20across%20your%20website%20and%20would%20love%20to%20learn%20more%20about%20your%20work.%0D%0AI%E2%80%99d%20like%20to%20have%20your%20detailed%20CV.%0D%0A%0D%0ABest%20regards,`}
-  >
+      href={`mailto:${email}?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`}
+    >
       View CV!
     </a>
   );
