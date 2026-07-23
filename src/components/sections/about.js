@@ -150,7 +150,7 @@ const About = () => {
             <p>
               Alongside this, my experience in{' '}
               human-computer interaction (HCI) and visual analytics, including
-              game storytelling, has shaped my interest in{' '} <strong>intepretation</strong>, 
+              game storytelling, has shaped my interest in{' '} <strong>interpretation</strong>, 
               <strong> sensemaking</strong> and <strong>human–AI collaboration</strong>.
               I'm excited to continue developing systems that are effective, understandable, and inclusive.
             </p>
